@@ -16,10 +16,10 @@
 
     public void ExibirMusicasAlbum()
     {
-        Console.WriteLine($"Lista de músicas do álbum {this.Nome}");
+        Console.WriteLine($"Lista de músicas do álbum {this.Nome}\n");
         foreach (var musica in musicas)
         {
-            Console.WriteLine($"Música: {musica.Nome}");
+            Console.WriteLine($"Música: {musica.Nome}\n");
         }
 
         Console.WriteLine($"Para ouvir esse álbum inteiro você precisa de {DuracaoTotal} segundos.");
