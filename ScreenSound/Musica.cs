@@ -1,10 +1,17 @@
 ﻿class Musica
 {
-    public string Nome {  get; set; }
-    public string Artista { get; set; }
+    //Criando um construtor, aonde não será possível criar uma música sem criar e passar o nome do artista e banda primeiro
+    public Musica(Banda artista, string nome)
+    {
+        Artista = artista;
+        Nome = nome;
+    }
+    public string Nome {  get; }
+    public Banda Artista { get; set; }
     public int Duracao { get; set; }
     public bool Disponivel { get; set; } //propriedade pascal case
 
+    public Genero Genero { get; set; }
     public string DescricaoResumida => $"A música {Nome} pertence à banda {Artista}";//chamado lambda
 
     //Maneira Resumida de ter uma propriedade apenas com o get, igual a de baixo
@@ -20,7 +27,7 @@
     public void ExibirFichaTecnica()
     {
         Console.WriteLine($"Nome: {Nome}");
-        Console.WriteLine($"Artista: {Artista}");
+        Console.WriteLine($"Artista: {Artista.Nome}");
         Console.WriteLine($"Duração: {Duracao}");
         if (Disponivel)
         {
